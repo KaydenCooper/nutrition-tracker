@@ -2,7 +2,7 @@
   <div class="home container-fluid">
     <div class="row justify-content-center p-2">
       <div class="col-6 p-2 text-center">
-        <form @submit="findFood">
+        <form @submit="findFoods">
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Search Food...." v-model="query" />
             <div class="input-group-append">
@@ -30,7 +30,7 @@ export default {
   },
   computed: {},
   methods: {
-    findFood() {
+    findFoods() {
       this.$store.dispatch("findFood", { query: this.query });
     },
   },

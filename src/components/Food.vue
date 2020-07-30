@@ -2,6 +2,7 @@
   <div class="row justify-content-center food">
     <div v-for="food in foundFood" :key="food.nix_item_id">
       <div class="card p-3 m-2 shadow-lg text-wrap text-center">
+        <button class="btn btn-primary m-2" @click="goToFoodDetails">Food Details</button>
         <img class="img-fluid" :src="food.photo.thumb" alt />
         <h4>
           <u>Brand:</u>
@@ -30,7 +31,11 @@ export default {
       return this.$store.state.foundFood;
     },
   },
-  methods: {},
+  methods: {
+    goToFoodDetails() {
+      this.$store.dispatch("goToFoodDetails");
+    },
+  },
   components: {},
 };
 </script>

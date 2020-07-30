@@ -16,12 +16,20 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     foundFood: [],
+    activeFood: {}
   },
+
   mutations: {
-    setFoundFood(state, foods) {
-      state.foundFood = foods
+    setFoundFood(state, food) {
+      state.foundFood = food
+    },
+
+    setActiveFood(state, foodData) {
+      state.activeFood = foodData
     }
   },
+
+
   actions: {
     async findFood({ commit }, query) {
       try {
@@ -29,11 +37,22 @@ export default new Vuex.Store({
         console.log(res.data);
         commit("setFoundFood", res.data.branded)
       } catch (error) {
-        debugger
         console.error(error)
       }
+    },
+
+    selectFood({ commit }, foodData) {
+      commit("setActiveFood", foodData)
+    },
+
+    goToFoodDetails() {
+
     }
+
+
   },
+
+
   modules: {
   }
 })

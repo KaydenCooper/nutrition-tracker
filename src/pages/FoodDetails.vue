@@ -1,5 +1,20 @@
 <template>
-  <div class="food-details">
-    <h1>This is an about page</h1>
-  </div>
+  <div class="foodDetails"></div>
 </template>
+
+
+<script>
+export default {
+  name: "foodDetails",
+  data() {
+    return {};
+  },
+  computed: {},
+  methods: {},
+  components: {},
+};
+</script>
+
+
+<style scoped>
+</style>
