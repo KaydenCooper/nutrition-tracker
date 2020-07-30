@@ -6,8 +6,8 @@ const api = axios.create({
   baseURL: "https://trackapi.nutritionix.com/v2/search/",
   timeout: 3000,
   headers: {
-    "x-app-key": "2eb17763bc92fced80f94b2f64f1ee05",
-    "x-app-id": "b6e0e4a2"
+    "x-app-key": "3438593d93cc1df96599ded5e5fd2ac1",
+    "x-app-id": "bf22a3be"
   }
 });
 
@@ -29,7 +29,8 @@ export default new Vuex.Store({
         console.log(res.data);
         commit("setFoundFood", res.data.branded)
       } catch (error) {
-
+        debugger
+        console.error(error)
       }
     }
   },
